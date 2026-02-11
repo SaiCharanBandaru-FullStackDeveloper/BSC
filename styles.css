@@ -1,0 +1,84 @@
+.root {
+  --bg-color-light: #ffffff;
+  --bg-color-dark: #121212;
+  --text-color-light: #000000;
+  --text-color-dark: #ffffff;
+  --primary-color: #6200ea;
+  --secondary-color: #03dac5;
+  --border-color: #e0e0e0;
+  --animation-speed: 0.3s;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+  transition: background-color var(--animation-speed), color var(--animation-speed);
+}
+
+body.dark-mode {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+
+.navbar {
+  background-color: var(--primary-color);
+  padding: 10px 20px;
+}
+
+.navbar a {
+  color: var(--text-color-dark);
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+.project-card {
+  background: var(--bg-color-light);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 15px;
+  margin: 20px;
+  transition: transform var(--animation-speed);
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+.progress-bar {
+  width: 100%;
+  background: var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  width: 0;
+  background: var(--primary-color);
+  transition: width 1s ease;
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    margin: 10px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
+  }
+}
+
+button {
+  cursor: pointer;
+  transition: background-color var(--animation-speed);
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+}
